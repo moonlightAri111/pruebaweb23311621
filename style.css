@@ -1,0 +1,154 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+ 
+.grid-container >*{
+    box-shadow: -1px 1px 7px 0px rgba(0, 0, 0, 0.75);
+    border-radius: 4px;
+    padding: 10px;
+    text-align: center;
+}
+ 
+.grid-container {
+    /* Forma para maquetar */
+    display: grid;
+    gap: 10px;
+    /* Crear las áreas para pantalla xs */
+    grid-template-areas:
+        "header"
+        "one"
+        "two"
+        "three"
+        "four"
+        "a"
+        "b"
+        "c"
+        "d"
+        "e"
+        "aside"
+        "aside2"
+        "footer";
+}
+ 
+.header {
+    grid-area: header;
+    background-color: #bc86b4;
+}
+ 
+.one {
+    grid-area: one;
+    background-color: lightblue;
+}
+ 
+.two {
+    grid-area: two;
+    background-color: lightblue;
+}
+ 
+.three {
+    grid-area: three;
+    background-color: lightblue;
+}
+ 
+.four {
+    grid-area: four;
+    background-color: lightblue;
+}
+ 
+.a {
+    grid-area: a;
+    background-color: lightgray;
+}
+ 
+.b {
+    grid-area: b;
+    background-color: lightgray;
+}
+ 
+.c {
+    grid-area: c;
+    background-color: lightgray;
+}
+ 
+.d {
+    grid-area: d;
+    background-color: lightgray;
+}
+ 
+.e {
+    grid-area: e;
+    background-color: lightgray;
+}
+ 
+.aside {
+    grid-area: aside;
+    background-color: #e392ca;
+}
+ 
+.aside2 {
+    grid-area: aside2;
+    background-color: #e392ca;
+}
+ 
+.footer {
+    grid-area: footer;
+    background-color: hsl(306, 18%, 47%);
+}
+ 
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.2rem;
+    min-height: 100%;
+}
+ 
+html {
+    height: 100%;
+}
+ 
+@media (min-width: 600px) {
+    .grid-container {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: auto;
+        grid-template-areas:
+            "header header header header"
+            "one one two two"
+            "three three four four"
+            "a a b b"
+            "c c d d"
+            "e e e e"
+            "aside aside aside aside"
+            "aside2 aside2 aside2 aside2"
+            "footer footer footer footer";
+    }
+}
+ 
+@media (min-width: 900px) {
+    .grid-container {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: auto;
+        grid-template-areas:
+            "header header header header"
+            "one two three four"
+            "e e e e"
+            "a b c d"
+            "aside aside aside2 aside2"
+            "footer footer footer footer";
+    }
+}
+ 
+@media (min-width: 1024px) {
+    .grid-container {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: auto;
+        grid-template-areas:
+            "header header header header"
+            ". one two ."
+            "three . . four"
+            "a b c d"
+            "e e e e"
+            "aside aside aside2 aside2"
+            "footer footer footer footer";
+    }
+}
